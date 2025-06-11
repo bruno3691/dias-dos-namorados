@@ -36,7 +36,7 @@ header#topo .info .aberto { display: flex; align-items: center; justify-content:
 header#topo .cover .logo img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* ALTERAÇÃO: Mostra a logo inteira dentro do círculo */
+    object-fit: contain;
     border-radius: 50%;
 }
 
@@ -59,13 +59,8 @@ main#lista { padding: 20px 0; }
 .produtos .item .texto span { display: block; margin: 5px 0; }
 .produtos .item .precoPromocao { text-decoration: line-through; color: #999; font-size: 14px; }
 .produtos .item .preco { font-size: 18px; font-weight: bold; color: #d63384; }
-.produtos .item .fotoProduto { width: 110px; height: 110px; flex-shrink: 0; background-color: #fff; /* Fundo branco para imagens com transparência */ }
-.produtos .item .fotoProduto img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* ALTERAÇÃO: Mostra a imagem inteira, sem cortar */
-    border-radius: 8px;
-}
+.produtos .item .fotoProduto { width: 110px; height: 110px; flex-shrink: 0; background-color: #fff; }
+.produtos .item .fotoProduto img { width: 100%; height: 100%; object-fit: contain; border-radius: 8px; }
 .produtos .item .fotoProduto div { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 30px; color: white; background: linear-gradient(45deg, #ff6b8a, #d63384); }
 .countdown { display: flex; justify-content: center; gap: 15px; margin: 15px 0; }
 .countdown .box { text-align: center; background: white; padding: 10px; border-radius: 8px; min-width: 60px; }
@@ -80,12 +75,7 @@ a.voltar { display: inline-block; background: #6c757d; color: white; padding: 10
 #detalhesProduto { background: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); overflow: hidden; }
 #detalhesProduto .info1, #detalhesProduto .info2, #detalhesProduto .info3 { padding: 25px; }
 #detalhesProduto .info1 { display: flex; gap: 20px; border-bottom: 1px solid #eee; }
-#detalhesProduto .info1 .fotoProduto img {
-    width: 200px;
-    height: 200px;
-    border-radius: 8px;
-    object-fit: contain; /* ALTERAÇÃO: Mostra a imagem inteira, sem cortar */
-}
+#detalhesProduto .info1 .fotoProduto img { width: 200px; height: 200px; border-radius: 8px; object-fit: contain; }
 #detalhesProduto .info1 .fotoProduto div { width: 200px; height: 200px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 80px; background: linear-gradient(45deg, #ff6b8a, #d63384); }
 #detalhesProduto .info1 .descricao h3 { margin: 0 0 10px; font-size: 24px; color: #d63384; }
 #detalhesProduto .info1 .descricao .detalhe { color: #555; margin-bottom: 15px; }
@@ -124,16 +114,24 @@ a.voltar { display: inline-block; background: #6c757d; color: white; padding: 10
 @media (max-width: 600px) {
     #detalhesProduto .info1 { flex-direction: column; }
     #detalhesProduto .info3 { flex-direction: column; gap: 15px; }
-    #detalhesProduto .info1 .fotoProduto { text-align: center; width: 100%; }
-    #detalhesProduto .info1 .fotoProduto img, 
-    #detalhesProduto .info1 .fotoProduto div {
-        width: 100%;
-        height: auto;
-        max-width: 300px;
-        display: block;
-        margin: 0 auto;
-        object-fit: contain; /* ALTERAÇÃO: Garante que a imagem inteira apareça também na página de detalhes */
-    }
     #detalhesProduto .info1 .preco { font-size: 26px; }
     #detalhesProduto .info3 .btn { width: 100%; padding: 18px; font-size: 18px; }
+
+    /* --- SOLUÇÃO DEFINITIVA PARA A IMAGEM NA PÁGINA DO PRODUTO --- */
+    #detalhesProduto .info1 .fotoProduto {
+        width: 100%;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    #detalhesProduto .info1 .fotoProduto img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        border-radius: 8px;
+    }
 }
