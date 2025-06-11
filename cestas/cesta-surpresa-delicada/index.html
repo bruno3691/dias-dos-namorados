@@ -2,40 +2,10 @@
 <html lang="pt-br" translate="no">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cesta Surpresa Delicada - Cestas do Coração</title>
-    
+    <link rel="stylesheet" href="../../css/estilo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link type="text/css" href="../../css/delivry.css" rel="stylesheet">
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; background-color: #f9f9f9; }
-        .containerFinalizar { max-width: 900px; margin: 20px auto; }
-        a.voltar { display: inline-block; background: #6c757d; color: white; padding: 10px 15px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-bottom: 15px; }
-        #detalhesProduto { background: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); overflow: hidden; }
-        .info1, .info2, .info3 { padding: 25px; }
-        .info1 { display: flex; gap: 20px; border-bottom: 1px solid #eee; }
-        .info1 .fotoProduto div { width: 200px; height: 200px; background: linear-gradient(45deg, #ff6b8a, #d63384); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-size: 80px; }
-        .info1 .descricao h3 { margin: 0 0 10px; font-size: 24px; color: #FFA500; }
-        .info1 .descricao .detalhe { color: #555; margin-bottom: 15px; }
-        .info1 .precoPromocao { text-decoration: line-through; color: #999; }
-        .info1 .preco { font-size: 28px; font-weight: bold; color: #333; }
-        .tipo { margin-bottom: 25px; }
-        .tipo .topo { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed #ccc; padding-bottom: 10px; margin-bottom: 15px; }
-        .tipo .topo h3 { margin: 0; color: #333; }
-        .opcoes { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
-        .opcoes .nome { font-weight: bold; }
-        .opcoes .preco { color: #077c22; }
-        .qtdeProdutoOpcao { display: flex; align-items: center; }
-        .qtdeProdutoOpcao button { background: #FFA500; color: white; border: none; width: 30px; height: 30px; border-radius: 50%; font-size: 16px; cursor: pointer; }
-        .qtdeProdutoOpcao input { text-align: center; border: 1px solid #ddd; width: 40px; height: 30px; margin: 0 5px; border-radius: 4px; }
-        .observacao { width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; margin-top: 10px; }
-        .info3 { background: #f0f0f0; display: flex; justify-content: space-between; align-items: center; }
-        .info3 #precoProduto { font-size: 24px; font-weight: bold; color: #FFA500; }
-        .info3 .btn { background: #28a745; color: white; border: none; padding: 15px 30px; border-radius: 5px; font-size: 18px; cursor: pointer; font-weight: bold; }
-        @media (max-width: 600px) { .info1 { flex-direction: column; } .info1 .fotoProduto { text-align: center; } .info3 { flex-direction: column; gap: 15px; } }
-    </style>
-    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
@@ -45,108 +15,34 @@
         <div id="detalhesProduto">
             <div class="info1">
                 <div class="fotoProduto">
-    <img src="imagens/produtos/cesta-surpresa-delicada.jpg" alt="Cesta Surpresa Delicada com Mini Buquê">
-</div>
+                    <img src="../../imagens/produtos/cesta-surpresa-delicada.jpg" alt="Cesta Surpresa Delicada com Mini Buquê">
+                </div>
                 <div class="descricao">
                     <h3>Cesta Surpresa Delicada + Mini Buquê</h3>
                     <p class="detalhe">Perfeita para quem gosta de demonstrar carinho com gestos delicados e cheios de significado.</p>
-                    de <span class="precoPromocao">R$ 89,99</span> por
-                    <span class="preco">R$ 49,90</span>
+                    de <span class="precoPromocao">R$ 89,99</span> por <span class="preco">R$ 49,90</span>
                 </div>
             </div>
-
             <div class="info2">
                 <div class="tipo">
-                    <div class="topo">
-                        <h3>Cor das Flores do Buquê:</h3>
-                    </div>
-                    <div class="opcoes">
-                        <span class="nome">Tons de Rosa (Padrão)</span>
-                        <input type="radio" name="cor_flores" value="rosa" checked>
-                    </div>
-                    <div class="opcoes">
-                        <span class="nome">Tons de Branco</span>
-                        <input type="radio" name="cor_flores" value="branco">
-                    </div>
-                     <div class="opcoes">
-                        <span class="nome">Flores do Campo (Colorido)</span>
-                        <input type="radio" name="cor_flores" value="campo">
-                    </div>
+                    <div class="topo"><h3>Cor das Flores do Buquê:</h3></div>
+                    <div class="opcoes"><span class="nome">Tons de Rosa (Padrão)</span><input type="radio" name="cor_flores" value="rosa" checked></div>
+                    <div class="opcoes"><span class="nome">Tons de Branco</span><input type="radio" name="cor_flores" value="branco"></div>
+                    <div class="opcoes"><span class="nome">Flores do Campo (Colorido)</span><input type="radio" name="cor_flores" value="campo"></div>
                 </div>
-
-                <div class="tipo">
-                    <div class="topo">
-                        <h3>Adicionar um Mimo:</h3>
-                    </div>
-                    <div class="opcoes">
-                        <div>
-                            <span class="nome">Caixa com 4 Bombons Finos</span><br>
-                            <span class="preco">+ R$ 15,00</span>
-                        </div>
-                        <div class="qtdeProdutoOpcao">
-                            <button class="removerQtdeOpcao">-</button>
-                            <input class="qtdeOpcao" type="text" value="0" readonly>
-                            <button class="adicionarQtdeOpcao">+</button>
-                        </div>
-                    </div>
-                </div>
-
                 <label>Adicionar um bilhete ou observação?</label>
                 <input class="observacao" type="text" name="observacao" placeholder="Escreva sua mensagem ou observação aqui..." maxlength="140">
             </div>
-
             <div class="info3">
                 <div id="precoProduto">R$ 49,90</div>
                 <button class="btn adicionarProduto" onclick="finalizar()">FINALIZAR PEDIDO</button>
-                 <a href="SEU_LINK_DE_PAGAMENTO_AQUI" id="finalizarPedido" style="display: none;"></a>
+                <a href="SEU_LINK_DE_PAGAMENTO_AQUI" id="finalizarPedido" style="display: none;"></a>
             </div>
         </div>
     </div>
-
     <script>
-        function finalizar() {
-            Swal.fire({
-                title: "Deseja que a entrega seja agora?",
-                showDenyButton: true,
-                showCancelButton: false,
-                allowOutsideClick: false,
-                icon: 'question',
-                confirmButtonText: "Sim, por favor!",
-                confirmButtonColor: "#28a745",
-                denyButtonText: `Não, quero agendar`,
-                focusConfirm: true,
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    location.href = $('a#finalizarPedido').attr('href');
-                } else if (result.isDenied) {
-                    Swal.fire({
-                        title: "Selecione o dia e a hora",
-                        text: 'Deixe seu pedido agendado e receba na hora combinada.',
-                        confirmButtonText: "Agendar pedido!",
-                        confirmButtonColor: "#28a745",
-                        input: "datetime-local",
-                    }).then((result) => {
-                         if (result.value) {
-                            location.href = $('a#finalizarPedido').attr('href');
-                         }
-                    });
-                }
-            });
-        }
-
-        $(document).ready(function () {
-            $('.adicionarQtdeOpcao').on('click', function () {
-                const input = $(this).siblings('input.qtdeOpcao');
-                let val = parseInt(input.val()) || 0;
-                input.val(val + 1);
-            });
-
-            $('.removerQtdeOpcao').on('click', function () {
-                const input = $(this).siblings('input.qtdeOpcao');
-                let val = parseInt(input.val()) || 0;
-                if (val > 0) input.val(val - 1);
-            });
-        });
+        function finalizar() {Swal.fire({title: "Deseja que a entrega seja agora?",showDenyButton: true,icon: 'question',confirmButtonText: "Sim, por favor!",confirmButtonColor: "#28a745",denyButtonText: `Não, quero agendar`,}).then((result) => {if (result.isConfirmed) {location.href = document.getElementById('finalizarPedido').href;} else if (result.isDenied) {Swal.fire({title: "Selecione o dia e a hora",confirmButtonText: "Agendar pedido!",confirmButtonColor: "#28a745",input: "datetime-local",}).then((r) => {if (r.value) {location.href = document.getElementById('finalizarPedido').href;}});}});}
+        $(document).ready(function () {$('.adicionarQtdeOpcao').on('click', function () { $(this).siblings('input.qtdeOpcao').val(parseInt($(this).siblings('input.qtdeOpcao').val() || 0) + 1); });$('.removerQtdeOpcao').on('click', function () { let i = $(this).siblings('input.qtdeOpcao'); if (parseInt(i.val() || 0) > 0) i.val(parseInt(i.val()) - 1); });});
     </script>
 </body>
 </html>
