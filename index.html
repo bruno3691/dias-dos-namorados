@@ -6075,15 +6075,15 @@ Decoração com Ramos Secos</span>
             const iconeStatus = statusLoja.previousElementSibling;
             const horarioInfo = document.getElementById("horario-fechamento");
             const iconeRelogio = document.getElementById("icone-relogio");
-            const estaAberto = horas >= 8 && horas < 22; // Aberto das 8h às 22h
+            const estaAberto = horas >= 8 && horas < 24; // Aberto das 7h às 02h
             if (estaAberto) {
                 statusLoja.textContent = "ABERTO";
                 iconeStatus.classList.add('btn-pisca');
-                horarioInfo.textContent = "até 23:00";
+                horarioInfo.textContent = "até 02:00";
             } else {
                 statusLoja.textContent = "FECHADO";
                 iconeStatus.classList.remove('btn-pisca');
-                horarioInfo.textContent = "Abre às 08:00";
+                horarioInfo.textContent = "Abre às 07:00";
             }
             iconeRelogio.style.display = "inline";
             horarioInfo.style.display = "inline";
